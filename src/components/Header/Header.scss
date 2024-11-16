@@ -1,0 +1,34 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+    width: 50vw;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-top: 9rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+
+    &__logo {
+        font-weight: bolder;
+    }
+    &__theme {
+        width: 5rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &--label {
+            font-weight: bold;
+            font-size: 0.8125rem;
+            color: $grayBlue;
+            letter-spacing: 2.5px;
+        }
+
+        &--icon {
+            height: 1.25rem;
+            width: 1.25rem;
+        }
+    }
+}
