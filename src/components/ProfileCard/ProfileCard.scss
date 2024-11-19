@@ -1,0 +1,75 @@
+@use "../../styles/partials/globals" as *;
+@use "../../styles/partials/variables" as *;
+@use "sass:map";
+
+.profileCard {
+    background: map.get($light-theme, componentBg);
+    width: 50vw;
+    margin: 0 auto;
+    padding: 3rem;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 16px 30px 0px rgba(70, 96, 187, 0.20);
+    display: flex;
+    gap: 2.3rem;
+
+    html[data-theme="dark"] & {
+        background: map.get($dark-theme, componentBg);
+        box-shadow: none;
+    }
+
+    &__pic {
+        height: 7.25rem;
+        width: 7.25rem;
+        border-radius: 50%;
+
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        // background: pink;
+    }
+
+    &__header { 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__userInfo {
+        margin-top: 1.25rem;
+    }
+    
+
+    &__userStats {
+        display: flex;
+        background: $skyBlue;
+        justify-content: space-between;
+        padding: 1rem 5rem 1rem 2rem;  
+        border-radius: 0.65rem;
+        margin-top: 2rem;
+
+        html[data-theme="dark"] & {
+            background: map.get($dark-theme, siteBg);
+        }
+    }
+
+    &__socialsLocation {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 1rem;
+        margin-top: 2.3rem;
+
+    }
+
+    &__info {
+        display: flex;
+        gap: 1rem;
+        width: 40%;
+        margin: 0;
+    }
+}

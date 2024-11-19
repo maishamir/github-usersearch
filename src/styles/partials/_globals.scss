@@ -1,37 +1,65 @@
 @use "./variables" as *;
+@use "sass:map";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Space Mono", monospace;   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
 }
 
 h1 {
-    font-size: 1.625rem;
-    line-height: 2.375rem;
-    font-weight: bold;
+  font-size: 1.625rem;
+  line-height: 2.375rem;
+  font-weight: bold;
+  color: map.get($light-theme, mainHeading);
+}
+
+html[data-theme="dark"] h1 {
+  color: map.get($dark-theme, mainHeading);
 }
 
 h2 {
-    font-size: 1.375rem;
-    line-height: 2.0625rem;
-    font-weight: bold;
+  font-size: 1.375rem;
+  line-height: 2.0625rem;
+  font-weight: bold;
+  color: map.get($light-theme, h2Color);
+
+  html[data-theme="dark"] & {
+    color: map.get($dark-theme, h2Color);
+  }
 }
 
 h3 {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5rem;
+  color: $blue;
 }
 
 h4 {
-    font-size: 0.8125rem;
-    line-height: 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: map.get($light-theme, h4Color);
+  font-weight: 400;
+
+  html[data-theme="dark"] & {
+    color: map.get($dark-theme, h4Color);
+  }
 }
 
 body {
-    font-size: 0.9375rem;
-    line-height: 1.5625rem;
-    background: $skyBlue;
-}
+  min-height: 100vh;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  color: map.get($light-theme, body);
+  background: map.get($light-theme, siteBg);
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
 
+  html[data-theme="dark"] & {
+    color: map.get($dark-theme, body);
+    background: map.get($dark-theme, siteBg);
+  }
+}
